@@ -11189,3 +11189,15 @@ body.dark-mode .btn-toggle-theme {
   text-decoration: none;
   transform: translateY(-3px);
 }
+
+/* Side Nav Active State in Dark Mode */
+body.dark-mode #sideNav .navbar-nav .nav-item .nav-link.active {
+  color: #fb923c !important;
+  /* Orange 400 - Matches other primary accents */
+  font-weight: 700;
+}
+
+body.dark-mode #sideNav .navbar-nav .nav-item .nav-link:hover {
+  color: #38bdf8 !important;
+  /* Sky 400 */
+}
