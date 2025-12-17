@@ -44,6 +44,9 @@
             </ul>
         </div>
     </nav>
+    <button class="btn btn-dark btn-toggle-theme" id="themeToggle" title="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
     <!-- Page Content-->
     <div class="container-fluid p-0">
         <!-- About-->
@@ -62,11 +65,6 @@
                     die Technik
                     hinter den Anwendungen zu verstehen, die unseren Alltag magisch erscheinen lassen."
                 </p>
-                <div class="mb-5">
-                    <a class="btn btn-primary btn-lg" href="assets/Lebenslauf.pdf" target="_blank">
-                        <i class="fas fa-file-pdf mr-2"></i> Lebenslauf (PDF)
-                    </a>
-                </div>
             </div>
         </section>
         <!-- Projects-->
@@ -336,32 +334,47 @@
                 <h2 class="mb-5">EDV-Kompetenzen</h2>
 
                 <div class="subheading mb-3">Fortgeschrittene Kenntnisse</div>
-                <ul class="fa-ul mb-0">
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Python, R</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>HTML, CSS, Javascript</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Microsoft Office, LibreOffice, LaTeX</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Adobe Acrobat Pro</li>
-                </ul>
+                <div class="mb-3">
+                    <span class="badge badge-primary">Python</span>
+                    <span class="badge badge-primary">R</span>
+                    <span class="badge badge-primary">HTML</span>
+                    <span class="badge badge-primary">CSS</span>
+                    <span class="badge badge-primary">Javascript</span>
+                    <span class="badge badge-info">Microsoft Office</span>
+                    <span class="badge badge-info">LibreOffice</span>
+                    <span class="badge badge-info">LaTeX</span>
+                    <span class="badge badge-info">Adobe Acrobat Pro</span>
+                </div>
 
                 <div class="subheading mb-3 mt-4">IDEs</div>
-                <ul class="fa-ul mb-0">
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>VS Code, Intellij IDEA, WebStorm</li>
-                </ul>
+                <div class="mb-3">
+                    <span class="badge badge-secondary">VS Code</span>
+                    <span class="badge badge-secondary">Intellij IDEA</span>
+                    <span class="badge badge-secondary">WebStorm</span>
+                </div>
 
                 <div class="subheading mb-3 mt-4">Betriebssysteme (OS)</div>
-                <ul class="fa-ul mb-0">
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Linux (Ubuntu, Mint, Fedora, Debian),
-                        MacOS, iOS, Windows</li>
-                </ul>
+                <div class="mb-3">
+                    <span class="badge badge-dark">Linux (Ubuntu, Mint, Fedora, Debian)</span>
+                    <span class="badge badge-dark">MacOS</span>
+                    <span class="badge badge-dark">iOS</span>
+                    <span class="badge badge-dark">Windows</span>
+                </div>
 
                 <div class="subheading mb-3 mt-4">Grundkenntnisse</div>
-                <ul class="fa-ul mb-0">
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>C++, Java</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>TypeScript, SQL, Git, Docker & K8s, Jira
-                    </li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>SPSS, R, Data-Science-Tools</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>CMS (Plone 4, Typo 3), InDesign</li>
-                </ul>
+                <div class="mb-3">
+                    <span class="badge badge-light text-dark border">C++</span>
+                    <span class="badge badge-light text-dark border">Java</span>
+                    <span class="badge badge-light text-dark border">TypeScript</span>
+                    <span class="badge badge-light text-dark border">SQL</span>
+                    <span class="badge badge-light text-dark border">Git</span>
+                    <span class="badge badge-light text-dark border">Docker & K8s</span>
+                    <span class="badge badge-light text-dark border">Jira</span>
+                    <span class="badge badge-light text-dark border">SPSS</span>
+                    <span class="badge badge-light text-dark border">Data-Science-Tools</span>
+                    <span class="badge badge-light text-dark border">CMS (Plone 4, Typo 3)</span>
+                    <span class="badge badge-light text-dark border">InDesign</span>
+                </div>
 
                 <div class="subheading mb-3 mt-4">Tippgeschwindigkeit</div>
                 <ul class="fa-ul mb-0">
@@ -410,6 +423,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        const body = document.body;
+
+        // Check for saved user preference
+        const currentTheme = localStorage.getItem('theme');
+
+        // Default to dark mode if no preference is set, or if dark-mode is saved
+        if (!currentTheme || currentTheme === 'dark-mode') {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+        // If 'light-mode' is explicitly saved, we do nothing (body stays default light)
+
+        themeToggle.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light-mode');
+            }
+        });
+
+        // Scroll to Top
+        var scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 100) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 
 </html>
