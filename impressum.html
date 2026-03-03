@@ -19,7 +19,6 @@
 </head>
 
 <body id="page-top">
-    <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="index.html#page-top">
             <span class="d-block d-lg-none">Andres Fernandez Lebron</span>
@@ -51,7 +50,6 @@
     <button class="btn btn-dark btn-toggle-theme" id="themeToggle" title="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
     </button>
-    <!-- Page Content-->
     <div class="container-fluid p-0">
         <section class="resume-section">
             <div class="resume-section-content">
@@ -63,7 +61,7 @@
                     In den Gässlewiesen 7<br>
                     79111 Freiburg im Breisgau<br>
                     <br><br>
-                    <a href="mailto:hoechstens_oden_0@icloud.com">E-Mail Kontakt</a>
+                    <a href="mailto:ahem.clave_0h@icloud.com">E-Mail Kontakt</a>
                     <br>
                     WhatsApp +49 176 28092307
 
@@ -78,41 +76,11 @@
                 </div>
                 <p class="fs-7 text-muted">
                     Stand: 17.12.2025 - siehe auch: <a href="impressum.html">Impressum</a>
-                    und <a href="datenschutz.html">Datenschutz</a>
                 </p>
             </div>
         </section>
     </div>
-    <script>
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const icon = themeToggle.querySelector('i');
-        const body = document.body;
-
-        // Check for saved user preference
-        const currentTheme = localStorage.getItem('theme');
-
-        // Default to dark mode if no preference is set, or if dark-mode is saved
-        if (!currentTheme || currentTheme === 'dark-mode') {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-
-        themeToggle.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark-mode');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light-mode');
-            }
-        });
-    </script>
+    <script src="js/theme.js"></script>
 </body>
 
 </html>
