@@ -8,18 +8,14 @@
     <meta name="author" content="" />
     <title>Andres Fernandez Lebron</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet"
         type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
-    <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <span class="d-block d-lg-none">Andres Fernandez Lebron</span>
@@ -47,9 +43,7 @@
     <button class="btn btn-dark btn-toggle-theme" id="themeToggle" title="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
     </button>
-    <!-- Page Content-->
     <div class="container-fluid p-0">
-        <!-- About-->
         <section class="resume-section" id="about">
             <div class="resume-section-content">
                 <h1 class="mb-0">
@@ -66,7 +60,6 @@
                 </p>
             </div>
         </section>
-        <!-- Projects-->
         <section class="resume-section" id="projects">
             <div class="resume-section-content">
                 <h2 class="mb-5">Projekte</h2>
@@ -127,11 +120,19 @@
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
                     <div class="flex-grow-1">
                         <div class="d-flex align-items-center mb-2">
-                            <h3 class="mb-0 mr-3">Datenanalyse-Dashboard</h3>
+                            <h3 class="mb-0 mr-3">Datenanalyse-Dashboards</h3>
                             <div>
-                                <a class="btn btn-sm btn-outline-dark"
+                                <a class="btn btn-sm btn-outline-dark mr-1"
                                     href="https://github.com/afdzlebron/22ws_dav_py-r" target="_blank">
                                     <i class="fab fa-github"></i> View Code
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary mr-1" href="https://dashboard-01.onrender.com/"
+                                    target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Demo 1
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary" href="https://dashboard-02-80mw.onrender.com/"
+                                    target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Demo 2
                                 </a>
                             </div>
                         </div>
@@ -166,10 +167,8 @@
                     <div class="flex-shrink-0"><span class="text-primary"></span></div>
                 </div>
 
-                <!-- Weitere Projekte hier einfügen -->
             </div>
         </section>
-        <!-- Experience-->
         <section class="resume-section" id="experience">
             <div class="resume-section-content">
                 <h2 class="mb-5">Berufserfahrungen</h2>
@@ -272,7 +271,6 @@
 
         <hr class="m-0" />
 
-        <!-- Education-->
         <section class="resume-section" id="education">
             <div class="resume-section-content">
                 <h2 class="mb-5">Studienerfahrungen</h2>
@@ -327,7 +325,6 @@
 
         <hr class="m-0" />
 
-        <!-- Skills-->
         <section class="resume-section" id="skills">
             <div class="resume-section-content">
                 <h2 class="mb-5">EDV-Kompetenzen</h2>
@@ -380,7 +377,6 @@
 
         <hr class="m-0" />
 
-        <!-- Interests -->
         <section class="resume-section" id="interests">
             <div class="resume-section-content">
                 <h2 class="mb-5">Interessen</h2>
@@ -396,7 +392,6 @@
 
         <hr class="m-0" />
 
-        <!-- Languages-->
         <section class="resume-section" id="languages">
             <div class="resume-section-content">
                 <h2 class="mb-5">Sprachkompetenzen</h2>
@@ -409,70 +404,17 @@
     </div>
     <p class="lead mb-5" style="padding-left: 1rem;">
         <a href="impressum.html" class="mr-3">Impressum</a> |
-        <a href="datenschutz.html" class="mx-3">Datenschutzhinweis</a> |
         <a href="impressum.html" class="mx-3">Kontakt</a> |
         <a href="assets/Lebenslauf-Fernandez.pdf" target="_blank" class="ml-3">Lebenslauf (PDF)</a>
     </p>
-    <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
         <i class="fas fa-angle-up"></i>
     </a>
-    <script>
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const icon = themeToggle.querySelector('i');
-        const body = document.body;
-
-        // Check for saved user preference
-        const currentTheme = localStorage.getItem('theme');
-
-        // Default to dark mode if no preference is set, or if dark-mode is saved
-        if (!currentTheme || currentTheme === 'dark-mode') {
-            body.classList.add('dark-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-        // If 'light-mode' is explicitly saved, we do nothing (body stays default light)
-
-        themeToggle.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark-mode');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light-mode');
-            }
-        });
-
-        // Scroll to Top
-        var scrollToTopBtn = document.querySelector('.scroll-to-top');
-
-        window.addEventListener('scroll', function () {
-            if (window.pageYOffset > 100) {
-                scrollToTopBtn.style.display = 'block';
-            } else {
-                scrollToTopBtn.style.display = 'none';
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+    <script src="js/theme.js"></script>
 </body>
 
 </html>
